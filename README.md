@@ -55,9 +55,12 @@ netlify deploy --prod
 2. Visit [app.netlify.com/drop](https://app.netlify.com/drop)
 3. Drag and drop your `dist` folder
 
-## 📖 Full Documentation
+## 📖 Documentation
 
-For detailed instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Comprehensive deployment guide
+- **[CHECKLIST.md](CHECKLIST.md)** - Step-by-step deployment checklist
+- **[FRAMEWORKS.md](examples/FRAMEWORKS.md)** - Framework-specific configurations
 
 ## Configuration Examples
 
