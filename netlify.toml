@@ -1,0 +1,93 @@
+# Netlify Configuration File
+# Documentation: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Directory to change to before starting a build
+  base = ""
+  
+  # Directory that contains the deploy-ready HTML files and assets
+  # Common values: "build", "dist", "public", "_site", "out"
+  publish = "dist"
+  
+  # Build command to run before deploying
+  # Examples:
+  # - npm run build
+  # - yarn build
+  # - hugo
+  # - jekyll build
+  command = "npm run build"
+
+# Production context: all deploys from the Production branch
+[context.production]
+  publish = "dist"
+  command = "npm run build"
+  
+[context.production.environment]
+  NODE_VERSION = "18"
+
+# Deploy Preview context: all deploys resulting from a pull/merge request
+[context.deploy-preview]
+  publish = "dist"
+  command = "npm run build"
+
+# Branch Deploy context: all deploys that are not from a pull/merge request
+[context.branch-deploy]
+  command = "npm run build"
+
+# Development context: local development using Netlify CLI
+[context.dev]
+  command = "npm run dev"
+  targetPort = 3000
+  publish = "dist"
+
+# Redirect rules
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Functions configuration
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Dev server configuration
+[dev]
+  framework = "#auto"
+  autoLaunch = true

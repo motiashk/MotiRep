@@ -1,0 +1,8 @@
+# Netlify Redirects File
+# Documentation: https://docs.netlify.com/routing/redirects/
+
+# API Proxy to backend
+# /api/*  https://api.example.com/:splat  200
+
+# SPA fallback - must be last rule
+/*    /index.html   200
