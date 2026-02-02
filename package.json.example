@@ -1,0 +1,24 @@
+{
+  "name": "motirep",
+  "version": "1.0.0",
+  "description": "Project with Netlify deployment configuration",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo 'Add your dev server command here (e.g., vite, webpack-dev-server)'",
+    "build": "echo 'Add your build command here (e.g., vite build, webpack --mode production)'",
+    "preview": "echo 'Add your preview command here'",
+    "netlify:dev": "netlify dev",
+    "netlify:deploy": "netlify deploy",
+    "netlify:deploy:prod": "netlify deploy --prod"
+  },
+  "keywords": [
+    "netlify",
+    "deployment",
+    "jamstack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
