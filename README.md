@@ -60,6 +60,7 @@ netlify deploy --prod
 - **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** - Comprehensive deployment guide
 - **[CHECKLIST.md](CHECKLIST.md)** - Step-by-step deployment checklist
+- **[BEST_PRACTICES.md](BEST_PRACTICES.md)** - Best practices and optimization tips
 - **[FRAMEWORKS.md](examples/FRAMEWORKS.md)** - Framework-specific configurations
 
 ## Configuration Examples
