@@ -1,17 +1,9 @@
 using Conversations.Abstractions.Auth;
-using Microsoft.Extensions.Logging;
 
 namespace Copilot;
 
 public class CopilotClient
 {
-    private readonly ILogger<CopilotClient> _logger;
-    
-    public CopilotClient(ILogger<CopilotClient> logger)
-    {
-        _logger = logger;
-    }
-    
     public CopilotUserData GetUserData()
     {
         var userData = new CopilotUserData
@@ -21,7 +13,7 @@ public class CopilotClient
             IsAuthenticated = true
         };
         
-        _logger.LogInformation("[CopilotClient] Copilot Internal User response: {UserData}", userData);
+        Console.WriteLine($"[Conversations Information] [CopilotClient] Copilot Internal User response: {userData}");
         
         return userData;
     }
